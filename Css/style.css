@@ -880,7 +880,7 @@ img {
   }
 
   .about-description {
-    text-align: initial;
+    text-align: center;
   }
 
   .about-info {
@@ -888,7 +888,8 @@ img {
   }
 
   .about-buttons {
-    justify-content: initial;
+    justify-content: center;
+    /* justify-content: initial; */
   }
 
   .services-container {
