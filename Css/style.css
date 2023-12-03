@@ -782,6 +782,10 @@ img {
     grid-column: initial;
   }
 
+  .home-title {
+    text-align: center;
+  }
+
   .home-blob-img {
     order: 1;
     justify-self: center;
