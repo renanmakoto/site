@@ -4,8 +4,8 @@
   --header-height: 3rem;
   --hue-color: 250;
   --first-color: #00ADA2;
-  --first-color-second: #00615b;
-  --first-color-alt: #00615b;
+  --first-color-second: #00ADA2;
+  --first-color-alt: #00ADA2;
   --first-color-lighter: #00ADA2;
   --text-color-light: hsl(var(--hue-color), 8%, 65%);
   --body-color: hsl(var(--hue-color), 60%, 99%);
@@ -637,13 +637,13 @@ img {
 }
 
 .footer-social:hover {
-  color: var(--first-color-lighter);
+  color: #007365;
 }
 
 .footer-copy {
   font-size: var(--smaller-font-size);
   text-align: center;
-  color: var(--text-color-light);
+  color: #ffffff;
   margin-top: var(--margin-bottom-0-3);
 }
 
