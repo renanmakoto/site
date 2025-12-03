@@ -1,502 +1,504 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="dotExtension - Professional Software Development Services by Renan Makoto. Specializing in JavaScript, TypeScript, React Native, and Node.js development.">
-    <meta name="keywords" content="software development, web development, mobile development, JavaScript, TypeScript, React Native, Node.js">
-    <meta name="author" content="Renan Makoto">
-    <meta property="og:title" content="dotExtension - Software Development">
-    <meta property="og:description" content="Professional software development services extending to every filetype.">
-    <meta property="og:type" content="website">
-    <title>dotExtension - Renan Makoto | Software Developer</title>
-    <link rel="stylesheet" href="libraries/swiper-bundle.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" type="image/x-icon" href="./assets/RM-2.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  </head>
-  <body>
-    <div class="loader" id="loader">
-      <div class="loader-content">
-        <span class="loader-text"><span class="logo-dot">.</span>Extension</span>
-        <div class="loader-bar"></div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Renan Makoto - Software Developer specializing in JavaScript, TypeScript, React Native, and Node.js">
+  <title>Renan Makoto | Software Developer</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/x-icon" href="./assets/RM-2.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#" class="nav-logo">
+        <span class="logo-bracket">&lt;</span>RM<span class="logo-bracket">/&gt;</span>
+      </a>
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#services" class="nav-link">Services</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+          <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"></circle>
+            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path>
+          </svg>
+          <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+        <a href="#contact" class="nav-cta">Let's Talk</a>
       </div>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
+  </nav>
 
-    <header class="header" id="header">
-      <nav class="nav container">
-        <a href="#" class="nav-logo">
-          <span class="logo-dot">.</span>Extension
-        </a>
-
-        <div class="nav-menu" id="nav-menu">
-          <ul class="nav-list">
-            <li class="nav-item">
-              <a href="#home" class="nav-link active-link">
-                <i class="fa-solid fa-house nav-icon"></i>
-                <span>Home</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="#about" class="nav-link">
-                <i class="fa-solid fa-user nav-icon"></i>
-                <span>About</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="#skills" class="nav-link">
-                <i class="fa-solid fa-code nav-icon"></i>
-                <span>Skills</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="#services" class="nav-link">
-                <i class="fa-solid fa-briefcase nav-icon"></i>
-                <span>Services</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="#contact" class="nav-link">
-                <i class="fa-solid fa-message nav-icon"></i>
-                <span>Contact</span>
-              </a>
-            </li>
-          </ul>
-          <i class="fa-solid fa-xmark nav-close" id="nav-close"></i>
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-bg">
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+        <div class="grid-pattern"></div>
+      </div>
+      <div class="container hero-content">
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          Available for new projects
         </div>
-
-        <div class="nav-btns">
-          <i class="fa-regular fa-moon change-theme" id="theme-button"></i>
-          <div class="nav-toggle" id="nav-toggle">
-            <i class="fa-solid fa-bars"></i>
-          </div>
+        <h1 class="hero-title">
+          Hi, I'm <span class="highlight">Renan Makoto</span>
+          <br>
+          <span class="typing-wrapper">
+            <span class="typed-text" id="typed-text"></span>
+            <span class="cursor"></span>
+          </span>
+        </h1>
+        <p class="hero-description">
+          I craft exceptional digital experiences with clean, efficient code.
+          Specializing in full-stack development with modern JavaScript technologies.
+        </p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-primary">
+            <span>Start a Project</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"></path>
+            </svg>
+          </a>
+          <a href="#about" class="btn btn-secondary">
+            <span>Learn More</span>
+          </a>
         </div>
-      </nav>
-    </header>
-
-    <main class="main">
-      <section class="home section" id="home">
-        <div class="home-container container grid">
-          <div class="home-content">
-            <div class="home-social">
-              <a href="https://www.linkedin.com/in/renanmakoto/" target="_blank" class="home-social-icon" aria-label="LinkedIn">
-                <i class="fa-brands fa-linkedin-in"></i>
-              </a>
-              <a href="https://github.com/renanmakoto" target="_blank" class="home-social-icon" aria-label="GitHub">
-                <i class="fa-brands fa-github"></i>
-              </a>
-            </div>
-
-            <div class="home-data">
-              <span class="home-greeting">Hello, I'm</span>
-              <h1 class="home-title">Renan Makoto</h1>
-              <div class="home-subtitle-wrapper">
-                <h2 class="home-subtitle">
-                  <span class="typed-text"></span>
-                  <span class="cursor">|</span>
-                </h2>
-              </div>
-              <p class="home-description">
-                Building digital solutions that extend to every possibility.
-                Crafting clean, efficient, and scalable code.
-              </p>
-              <div class="home-buttons">
-                <a href="#contact" class="button button-flex">
-                  Get In Touch
-                  <i class="fa-regular fa-paper-plane button-icon"></i>
-                </a>
-                <a href="#about" class="button button-outline button-flex">
-                  Learn More
-                  <i class="fa-solid fa-arrow-down button-icon"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div class="home-scroll">
-            <a href="#about" class="home-scroll-button button-flex">
-              <i class="fa-solid fa-computer-mouse home-scroll-mouse"></i>
-              <span class="home-scroll-name">Scroll down</span>
-              <i class="fa-solid fa-arrow-down home-scroll-arrow"></i>
-            </a>
-          </div>
+        <div class="hero-social">
+          <a href="https://github.com/renanmakoto" target="_blank" class="social-link" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+            </svg>
+          </a>
+          <a href="https://www.linkedin.com/in/renanmakoto/" target="_blank" class="social-link" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+          </a>
         </div>
-      </section>
+      </div>
+      <a href="#about" class="scroll-indicator">
+        <span>Scroll</span>
+        <div class="scroll-line"></div>
+      </a>
+    </section>
 
-      <section class="about section" id="about">
-        <h2 class="section-title">About Me</h2>
-        <span class="section-subtitle">My Introduction</span>
-
-        <div class="about-container container grid">
-          <div class="about-data">
-            <p class="about-description">
-              As a dedicated developer with profound expertise in JavaScript, I excel in 
-              delivering meticulously crafted solutions that merge creativity with technical precision. 
-              My approach is anchored in methodical analysis and a deep attention to detail, 
-              ensuring that every project I undertake is executed with the highest level of accuracy and effectiveness.
+    <section class="about" id="about">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">About</span>
+          <h2 class="section-title">Passionate about building<br><span class="highlight">great software</span></h2>
+        </div>
+        <div class="about-content">
+          <div class="about-text">
+            <p>
+              I'm a software developer with deep expertise in the JavaScript ecosystem. 
+              I love turning complex problems into simple, elegant solutions through clean code 
+              and thoughtful architecture.
             </p>
-            <p class="about-description">
-              With a robust background in Linux systems, I leverage this platform to create secure, efficient, 
-              and scalable software environments. My extensive experience spans across designing intuitive front-end interfaces, 
-              developing resilient back-end systems, and optimizing performance across the stack.
+            <p>
+              With a strong foundation in Linux systems and modern web technologies, I build 
+              applications that are not only functional but also performant and maintainable. 
+              From responsive frontends to scalable backends, I approach every project with 
+              attention to detail and a commitment to excellence.
             </p>
-
-            <div class="about-info">
-              <div class="about-info-item">
-                <span class="about-info-title">3+</span>
-                <span class="about-info-name">Years<br>Experience</span>
+            <div class="about-highlights">
+              <div class="highlight-item">
+                <span class="highlight-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                  </svg>
+                </span>
+                <div>
+                  <strong>Full Stack</strong>
+                  <span>End-to-end development</span>
+                </div>
               </div>
-              <div class="about-info-item">
-                <span class="about-info-title">20+</span>
-                <span class="about-info-name">Completed<br>Projects</span>
+              <div class="highlight-item">
+                <span class="highlight-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                    <line x1="8" y1="21" x2="16" y2="21"></line>
+                    <line x1="12" y1="17" x2="12" y2="21"></line>
+                  </svg>
+                </span>
+                <div>
+                  <strong>Clean Code</strong>
+                  <span>Maintainable & scalable</span>
+                </div>
               </div>
-              <div class="about-info-item">
-                <span class="about-info-title">10+</span>
-                <span class="about-info-name">Happy<br>Clients</span>
+              <div class="highlight-item">
+                <span class="highlight-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path>
+                  </svg>
+                </span>
+                <div>
+                  <strong>Performance</strong>
+                  <span>Fast & optimized</span>
+                </div>
               </div>
             </div>
           </div>
+          <div class="about-stats">
+            <div class="stat-card">
+              <span class="stat-number" data-target="3">0</span>
+              <span class="stat-suffix">+</span>
+              <span class="stat-label">Years Experience</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number" data-target="20">0</span>
+              <span class="stat-suffix">+</span>
+              <span class="stat-label">Projects Completed</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number" data-target="10">0</span>
+              <span class="stat-suffix">+</span>
+              <span class="stat-label">Happy Clients</span>
+            </div>
+          </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section class="skills section" id="skills">
-        <h2 class="section-title">Skills</h2>
-        <span class="section-subtitle">My Technical Expertise</span>
-
-        <div class="skills-container container grid">
-          <div class="skills-group">
-            <h3 class="skills-group-title">
-              <i class="fa-solid fa-code"></i>
+    <section class="skills" id="skills">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Skills</span>
+          <h2 class="section-title">Technologies I<br><span class="highlight">work with</span></h2>
+        </div>
+        <div class="skills-grid">
+          <div class="skill-category">
+            <h3 class="category-title">
+              <span class="category-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="16 18 22 12 16 6"></polyline>
+                  <polyline points="8 6 2 12 8 18"></polyline>
+                </svg>
+              </span>
               Frontend
             </h3>
-            <div class="skills-content">
-              <div class="skill-item" data-level="90">
-                <div class="skill-header">
+            <div class="skill-items">
+              <div class="skill-item">
+                <div class="skill-info">
                   <span class="skill-name">JavaScript</span>
-                  <span class="skill-percentage">90%</span>
+                  <span class="skill-level">Expert</span>
                 </div>
-                <div class="skill-bar">
-                  <div class="skill-progress"></div>
-                </div>
+                <div class="skill-bar"><div class="skill-progress" data-width="95"></div></div>
               </div>
-              <div class="skill-item" data-level="85">
-                <div class="skill-header">
+              <div class="skill-item">
+                <div class="skill-info">
                   <span class="skill-name">TypeScript</span>
-                  <span class="skill-percentage">85%</span>
+                  <span class="skill-level">Advanced</span>
                 </div>
-                <div class="skill-bar">
-                  <div class="skill-progress"></div>
-                </div>
+                <div class="skill-bar"><div class="skill-progress" data-width="88"></div></div>
               </div>
-              <div class="skill-item" data-level="85">
-                <div class="skill-header">
+              <div class="skill-item">
+                <div class="skill-info">
                   <span class="skill-name">React</span>
-                  <span class="skill-percentage">85%</span>
+                  <span class="skill-level">Advanced</span>
                 </div>
-                <div class="skill-bar">
-                  <div class="skill-progress"></div>
-                </div>
+                <div class="skill-bar"><div class="skill-progress" data-width="85"></div></div>
               </div>
-              <div class="skill-item" data-level="80">
-                <div class="skill-header">
+              <div class="skill-item">
+                <div class="skill-info">
                   <span class="skill-name">HTML/CSS</span>
-                  <span class="skill-percentage">80%</span>
+                  <span class="skill-level">Expert</span>
                 </div>
-                <div class="skill-bar">
-                  <div class="skill-progress"></div>
-                </div>
+                <div class="skill-bar"><div class="skill-progress" data-width="92"></div></div>
               </div>
             </div>
           </div>
-
-          <div class="skills-group">
-            <h3 class="skills-group-title">
-              <i class="fa-solid fa-server"></i>
+          <div class="skill-category">
+            <h3 class="category-title">
+              <span class="category-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+                  <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+                  <line x1="6" y1="6" x2="6.01" y2="6"></line>
+                  <line x1="6" y1="18" x2="6.01" y2="18"></line>
+                </svg>
+              </span>
               Backend
             </h3>
-            <div class="skills-content">
-              <div class="skill-item" data-level="88">
-                <div class="skill-header">
+            <div class="skill-items">
+              <div class="skill-item">
+                <div class="skill-info">
                   <span class="skill-name">Node.js</span>
-                  <span class="skill-percentage">88%</span>
+                  <span class="skill-level">Expert</span>
                 </div>
-                <div class="skill-bar">
-                  <div class="skill-progress"></div>
-                </div>
+                <div class="skill-bar"><div class="skill-progress" data-width="90"></div></div>
               </div>
-              <div class="skill-item" data-level="80">
-                <div class="skill-header">
+              <div class="skill-item">
+                <div class="skill-info">
                   <span class="skill-name">Express.js</span>
-                  <span class="skill-percentage">80%</span>
+                  <span class="skill-level">Advanced</span>
                 </div>
-                <div class="skill-bar">
-                  <div class="skill-progress"></div>
-                </div>
+                <div class="skill-bar"><div class="skill-progress" data-width="85"></div></div>
               </div>
-              <div class="skill-item" data-level="75">
-                <div class="skill-header">
+              <div class="skill-item">
+                <div class="skill-info">
                   <span class="skill-name">MongoDB</span>
-                  <span class="skill-percentage">75%</span>
+                  <span class="skill-level">Intermediate</span>
                 </div>
-                <div class="skill-bar">
-                  <div class="skill-progress"></div>
-                </div>
+                <div class="skill-bar"><div class="skill-progress" data-width="75"></div></div>
               </div>
-              <div class="skill-item" data-level="70">
-                <div class="skill-header">
+              <div class="skill-item">
+                <div class="skill-info">
                   <span class="skill-name">MySQL</span>
-                  <span class="skill-percentage">70%</span>
+                  <span class="skill-level">Intermediate</span>
                 </div>
-                <div class="skill-bar">
-                  <div class="skill-progress"></div>
-                </div>
+                <div class="skill-bar"><div class="skill-progress" data-width="72"></div></div>
               </div>
             </div>
           </div>
-
-          <div class="skills-group">
-            <h3 class="skills-group-title">
-              <i class="fa-solid fa-mobile-screen"></i>
+          <div class="skill-category">
+            <h3 class="category-title">
+              <span class="category-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                  <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                </svg>
+              </span>
               Mobile & Tools
             </h3>
-            <div class="skills-content">
-              <div class="skill-item" data-level="85">
-                <div class="skill-header">
+            <div class="skill-items">
+              <div class="skill-item">
+                <div class="skill-info">
                   <span class="skill-name">React Native</span>
-                  <span class="skill-percentage">85%</span>
+                  <span class="skill-level">Advanced</span>
                 </div>
-                <div class="skill-bar">
-                  <div class="skill-progress"></div>
-                </div>
+                <div class="skill-bar"><div class="skill-progress" data-width="85"></div></div>
               </div>
-              <div class="skill-item" data-level="80">
-                <div class="skill-header">
+              <div class="skill-item">
+                <div class="skill-info">
                   <span class="skill-name">Expo</span>
-                  <span class="skill-percentage">80%</span>
+                  <span class="skill-level">Advanced</span>
                 </div>
-                <div class="skill-bar">
-                  <div class="skill-progress"></div>
-                </div>
+                <div class="skill-bar"><div class="skill-progress" data-width="82"></div></div>
               </div>
-              <div class="skill-item" data-level="85">
-                <div class="skill-header">
+              <div class="skill-item">
+                <div class="skill-info">
                   <span class="skill-name">Git</span>
-                  <span class="skill-percentage">85%</span>
+                  <span class="skill-level">Advanced</span>
                 </div>
-                <div class="skill-bar">
-                  <div class="skill-progress"></div>
-                </div>
+                <div class="skill-bar"><div class="skill-progress" data-width="88"></div></div>
               </div>
-              <div class="skill-item" data-level="75">
-                <div class="skill-header">
+              <div class="skill-item">
+                <div class="skill-info">
                   <span class="skill-name">Linux</span>
-                  <span class="skill-percentage">75%</span>
+                  <span class="skill-level">Intermediate</span>
                 </div>
-                <div class="skill-bar">
-                  <div class="skill-progress"></div>
-                </div>
+                <div class="skill-bar"><div class="skill-progress" data-width="78"></div></div>
               </div>
             </div>
           </div>
         </div>
-
-        <div class="skills-tags container">
-          <span class="skill-tag">ES6+</span>
-          <span class="skill-tag">REST APIs</span>
-          <span class="skill-tag">Firebase</span>
-          <span class="skill-tag">Redux</span>
-          <span class="skill-tag">Sass</span>
-          <span class="skill-tag">Webpack</span>
-          <span class="skill-tag">Docker</span>
-          <span class="skill-tag">Agile</span>
+        <div class="tech-tags">
+          <span class="tech-tag">ES6+</span>
+          <span class="tech-tag">REST APIs</span>
+          <span class="tech-tag">Firebase</span>
+          <span class="tech-tag">Redux</span>
+          <span class="tech-tag">Sass</span>
+          <span class="tech-tag">Webpack</span>
+          <span class="tech-tag">Docker</span>
+          <span class="tech-tag">Agile</span>
+          <span class="tech-tag">Jest</span>
+          <span class="tech-tag">CI/CD</span>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section class="services section" id="services">
-        <h2 class="section-title">Services</h2>
-        <span class="section-subtitle">What I Offer</span>
-
-        <div class="services-container container grid">
-          <article class="services-card">
-            <div class="services-card-inner">
-              <div class="services-card-front">
-                <div class="services-icon-wrapper">
-                  <i class="fa-solid fa-laptop-code services-icon"></i>
-                </div>
-                <h3 class="services-title">Web Development</h3>
-                <p class="services-description">Modern, responsive websites and web applications</p>
-              </div>
-              <div class="services-card-back">
-                <h4 class="services-back-title">Technologies</h4>
-                <ul class="services-list">
-                  <li><i class="fa-solid fa-check"></i> React & Next.js</li>
-                  <li><i class="fa-solid fa-check"></i> Node.js & Express</li>
-                  <li><i class="fa-solid fa-check"></i> TypeScript</li>
-                  <li><i class="fa-solid fa-check"></i> RESTful APIs</li>
-                </ul>
-                <a href="#contact" class="button button-small">Get Started</a>
-              </div>
+    <section class="services" id="services">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Services</span>
+          <h2 class="section-title">What I can<br><span class="highlight">do for you</span></h2>
+        </div>
+        <div class="services-grid">
+          <article class="service-card">
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+              </svg>
             </div>
+            <h3 class="service-title">Web Development</h3>
+            <p class="service-description">
+              Modern, responsive web applications built with React, Next.js, and cutting-edge technologies.
+            </p>
+            <ul class="service-features">
+              <li>Single Page Applications</li>
+              <li>Progressive Web Apps</li>
+              <li>E-commerce Solutions</li>
+              <li>Custom CMS Development</li>
+            </ul>
           </article>
-
-          <article class="services-card">
-            <div class="services-card-inner">
-              <div class="services-card-front">
-                <div class="services-icon-wrapper">
-                  <i class="fa-solid fa-mobile-screen-button services-icon"></i>
-                </div>
-                <h3 class="services-title">Mobile Development</h3>
-                <p class="services-description">Cross-platform mobile applications</p>
-              </div>
-              <div class="services-card-back">
-                <h4 class="services-back-title">Technologies</h4>
-                <ul class="services-list">
-                  <li><i class="fa-solid fa-check"></i> React Native</li>
-                  <li><i class="fa-solid fa-check"></i> Expo</li>
-                  <li><i class="fa-solid fa-check"></i> iOS & Android</li>
-                  <li><i class="fa-solid fa-check"></i> Push Notifications</li>
-                </ul>
-                <a href="#contact" class="button button-small">Get Started</a>
-              </div>
+          <article class="service-card featured">
+            <div class="service-badge">Popular</div>
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                <line x1="12" y1="18" x2="12.01" y2="18"></line>
+              </svg>
             </div>
+            <h3 class="service-title">Mobile Development</h3>
+            <p class="service-description">
+              Cross-platform mobile apps for iOS and Android using React Native and Expo.
+            </p>
+            <ul class="service-features">
+              <li>iOS & Android Apps</li>
+              <li>Push Notifications</li>
+              <li>Offline Support</li>
+              <li>App Store Deployment</li>
+            </ul>
           </article>
-
-          <article class="services-card">
-            <div class="services-card-inner">
-              <div class="services-card-front">
-                <div class="services-icon-wrapper">
-                  <i class="fa-solid fa-database services-icon"></i>
-                </div>
-                <h3 class="services-title">Backend & Database</h3>
-                <p class="services-description">Scalable server-side solutions</p>
-              </div>
-              <div class="services-card-back">
-                <h4 class="services-back-title">Technologies</h4>
-                <ul class="services-list">
-                  <li><i class="fa-solid fa-check"></i> MongoDB & MySQL</li>
-                  <li><i class="fa-solid fa-check"></i> Firebase</li>
-                  <li><i class="fa-solid fa-check"></i> Authentication</li>
-                  <li><i class="fa-solid fa-check"></i> Cloud Services</li>
-                </ul>
-                <a href="#contact" class="button button-small">Get Started</a>
-              </div>
+          <article class="service-card">
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+              </svg>
             </div>
+            <h3 class="service-title">Backend & APIs</h3>
+            <p class="service-description">
+              Scalable server-side solutions with Node.js, Express, and database management.
+            </p>
+            <ul class="service-features">
+              <li>RESTful API Design</li>
+              <li>Database Architecture</li>
+              <li>Authentication Systems</li>
+              <li>Cloud Integration</li>
+            </ul>
           </article>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section class="contact section" id="contact">
-        <h2 class="section-title">Contact Me</h2>
-        <span class="section-subtitle">Let's Work Together</span>
-
-        <div class="contact-container container grid">
-          <div class="contact-info-wrapper">
-            <div class="contact-card">
-              <i class="fa-regular fa-envelope contact-icon"></i>
-              <h3 class="contact-title">Email</h3>
-              <p class="contact-subtitle">contactrenanmakoto@gmail.com</p>
-              <a href="mailto:contactrenanmakoto@gmail.com" class="contact-link">
-                Write me
-                <i class="fa-solid fa-arrow-right"></i>
+    <section class="contact" id="contact">
+      <div class="container">
+        <div class="contact-wrapper">
+          <div class="contact-info">
+            <span class="section-tag">Contact</span>
+            <h2 class="section-title">Let's work<br><span class="highlight">together</span></h2>
+            <p class="contact-description">
+              Have a project in mind? I'd love to hear about it. Let's discuss how we can bring your ideas to life.
+            </p>
+            <div class="contact-methods">
+              <a href="mailto:contactrenanmakoto@gmail.com" class="contact-method">
+                <span class="method-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                  </svg>
+                </span>
+                <div class="method-info">
+                  <span class="method-label">Email</span>
+                  <span class="method-value">contactrenanmakoto@gmail.com</span>
+                </div>
               </a>
-            </div>
-
-            <div class="contact-card">
-              <i class="fa-brands fa-linkedin-in contact-icon"></i>
-              <h3 class="contact-title">LinkedIn</h3>
-              <p class="contact-subtitle">@renanmakoto</p>
-              <a href="https://www.linkedin.com/in/renanmakoto/" target="_blank" class="contact-link">
-                Connect
-                <i class="fa-solid fa-arrow-right"></i>
+              <a href="https://www.linkedin.com/in/renanmakoto/" target="_blank" class="contact-method">
+                <span class="method-icon">
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                  </svg>
+                </span>
+                <div class="method-info">
+                  <span class="method-label">LinkedIn</span>
+                  <span class="method-value">@renanmakoto</span>
+                </div>
               </a>
-            </div>
-
-            <div class="contact-card">
-              <i class="fa-brands fa-github contact-icon"></i>
-              <h3 class="contact-title">GitHub</h3>
-              <p class="contact-subtitle">@renanmakoto</p>
-              <a href="https://github.com/renanmakoto" target="_blank" class="contact-link">
-                View Profile
-                <i class="fa-solid fa-arrow-right"></i>
+              <a href="https://github.com/renanmakoto" target="_blank" class="contact-method">
+                <span class="method-icon">
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                  </svg>
+                </span>
+                <div class="method-info">
+                  <span class="method-label">GitHub</span>
+                  <span class="method-value">@renanmakoto</span>
+                </div>
               </a>
             </div>
           </div>
-
           <form class="contact-form" id="contact-form">
-            <div class="contact-form-group">
-              <label for="name" class="contact-label">Name</label>
-              <input type="text" id="name" name="name" class="contact-input" placeholder="Your name" required>
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" placeholder="John Doe" required>
             </div>
-            <div class="contact-form-group">
-              <label for="email" class="contact-label">Email</label>
-              <input type="email" id="email" name="email" class="contact-input" placeholder="Your email" required>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="john@example.com" required>
             </div>
-            <div class="contact-form-group">
-              <label for="subject" class="contact-label">Subject</label>
-              <input type="text" id="subject" name="subject" class="contact-input" placeholder="Subject">
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" name="subject" placeholder="Project Inquiry">
             </div>
-            <div class="contact-form-group">
-              <label for="message" class="contact-label">Message</label>
-              <textarea id="message" name="message" class="contact-input contact-textarea" placeholder="Your message" required></textarea>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
             </div>
-            <button type="submit" class="button button-flex contact-button">
-              Send Message
-              <i class="fa-regular fa-paper-plane button-icon"></i>
+            <button type="submit" class="btn btn-primary btn-full">
+              <span>Send Message</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="22" y1="2" x2="11" y2="13"></line>
+                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+              </svg>
             </button>
           </form>
         </div>
-      </section>
-    </main>
+      </div>
+    </section>
+  </main>
 
-    <footer class="footer">
-      <div class="footer-container container grid">
-        <div class="footer-content">
-          <a href="#" class="footer-logo">
-            <span class="logo-dot">.</span>Extension
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <a href="#" class="footer-logo">
+          <span class="logo-bracket">&lt;</span>RM<span class="logo-bracket">/&gt;</span>
+        </a>
+        <p class="footer-text">Building digital experiences with passion and precision.</p>
+        <div class="footer-social">
+          <a href="https://github.com/renanmakoto" target="_blank" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+            </svg>
           </a>
-          <p class="footer-description">
-            Extending to every filetype.<br>
-            Building digital solutions with passion.
-          </p>
-        </div>
-
-        <div class="footer-content">
-          <h3 class="footer-title">Quick Links</h3>
-          <ul class="footer-links">
-            <li><a href="#about" class="footer-link">About</a></li>
-            <li><a href="#skills" class="footer-link">Skills</a></li>
-            <li><a href="#services" class="footer-link">Services</a></li>
-            <li><a href="#contact" class="footer-link">Contact</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-content">
-          <h3 class="footer-title">Follow Me</h3>
-          <div class="footer-socials">
-            <a href="https://www.linkedin.com/in/renanmakoto/" target="_blank" class="footer-social" aria-label="LinkedIn">
-              <i class="fa-brands fa-linkedin-in"></i>
-            </a>
-            <a href="https://github.com/renanmakoto" target="_blank" class="footer-social" aria-label="GitHub">
-              <i class="fa-brands fa-github"></i>
-            </a>
-          </div>
+          <a href="https://www.linkedin.com/in/renanmakoto/" target="_blank" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+          </a>
         </div>
       </div>
-
       <div class="footer-bottom">
-        <p class="footer-copy">
-          &copy; 2024 Renan Makoto. All rights reserved.
-        </p>
+        <p>&copy; 2024 Renan Makoto. All rights reserved.</p>
       </div>
-    </footer>
+    </div>
+  </footer>
 
-    <a href="#home" class="scrollup" id="scroll-up" aria-label="Scroll to top">
-      <i class="fa-solid fa-arrow-up scroll-up-icon"></i>
-    </a>
+  <button class="scroll-top" id="scroll-top" aria-label="Scroll to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M18 15l-6-6-6 6"></path>
+    </svg>
+  </button>
 
-    <script src="libraries/swiper-bundle.min.js"></script>
-    <script src="https://kit.fontawesome.com/9b634c15bd.js" crossorigin="anonymous"></script>
-    <script src="script.js"></script>
-  </body>
+  <script src="https://kit.fontawesome.com/9b634c15bd.js" crossorigin="anonymous"></script>
+  <script src="script.js"></script>
+</body>
 </html>

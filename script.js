@@ -1,292 +1,223 @@
-const navMenu = document.getElementById("nav-menu");
-const navToggle = document.getElementById("nav-toggle");
-const navClose = document.getElementById("nav-close");
-const navLinks = document.querySelectorAll(".nav-link");
-const header = document.getElementById("header");
-const scrollUp = document.getElementById("scroll-up");
-const themeButton = document.getElementById("theme-button");
-const sections = document.querySelectorAll("section[id]");
-const loader = document.getElementById("loader");
-const skillItems = document.querySelectorAll(".skill-item");
-const typedTextElement = document.querySelector(".typed-text");
-const contactForm = document.getElementById("contact-form");
+const navbar = document.getElementById('navbar');
+const navMenu = document.getElementById('nav-menu');
+const navToggle = document.getElementById('nav-toggle');
+const navLinks = document.querySelectorAll('.nav-link');
+const themeToggle = document.getElementById('theme-toggle');
+const scrollTopBtn = document.getElementById('scroll-top');
+const typedText = document.getElementById('typed-text');
+const skillBars = document.querySelectorAll('.skill-progress');
+const statNumbers = document.querySelectorAll('.stat-number');
+const contactForm = document.getElementById('contact-form');
 
-const typedStrings = [
-  "Software Developer",
-  "Full Stack Engineer",
-  "JavaScript Expert",
-  "React Native Developer",
-  "Problem Solver"
+const phrases = [
+  'Software Developer',
+  'Full Stack Engineer',
+  'JavaScript Expert',
+  'React Native Developer',
+  'Problem Solver'
 ];
 
-let stringIndex = 0;
+let phraseIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
-let typingSpeed = 100;
+let typeDelay = 100;
 
-function typeEffect() {
-  const currentString = typedStrings[stringIndex];
-
+function type() {
+  const currentPhrase = phrases[phraseIndex];
+  
   if (isDeleting) {
-    typedTextElement.textContent = currentString.substring(0, charIndex - 1);
+    typedText.textContent = currentPhrase.substring(0, charIndex - 1);
     charIndex--;
-    typingSpeed = 50;
+    typeDelay = 50;
   } else {
-    typedTextElement.textContent = currentString.substring(0, charIndex + 1);
+    typedText.textContent = currentPhrase.substring(0, charIndex + 1);
     charIndex++;
-    typingSpeed = 100;
+    typeDelay = 100;
   }
 
-  if (!isDeleting && charIndex === currentString.length) {
+  if (!isDeleting && charIndex === currentPhrase.length) {
     isDeleting = true;
-    typingSpeed = 2000;
+    typeDelay = 2000;
   } else if (isDeleting && charIndex === 0) {
     isDeleting = false;
-    stringIndex = (stringIndex + 1) % typedStrings.length;
-    typingSpeed = 500;
+    phraseIndex = (phraseIndex + 1) % phrases.length;
+    typeDelay = 500;
   }
 
-  setTimeout(typeEffect, typingSpeed);
+  setTimeout(type, typeDelay);
 }
 
-window.addEventListener("load", () => {
-  setTimeout(() => {
-    loader.classList.add("hidden");
-    document.body.classList.add("loaded");
-    typeEffect();
-    animateSkillsOnScroll();
-  }, 1500);
+document.addEventListener('DOMContentLoaded', () => {
+  setTimeout(type, 1000);
 });
 
-if (navToggle) {
-  navToggle.addEventListener("click", () => {
-    navMenu.classList.add("show-menu");
-  });
-}
+navToggle.addEventListener('click', () => {
+  navMenu.classList.toggle('active');
+  navToggle.classList.toggle('active');
+});
 
-if (navClose) {
-  navClose.addEventListener("click", () => {
-    navMenu.classList.remove("show-menu");
-  });
-}
-
-navLinks.forEach((link) => {
-  link.addEventListener("click", () => {
-    navMenu.classList.remove("show-menu");
+navLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    navMenu.classList.remove('active');
+    navToggle.classList.remove('active');
   });
 });
 
-document.addEventListener("click", (e) => {
-  if (!navMenu.contains(e.target) && !navToggle.contains(e.target)) {
-    navMenu.classList.remove("show-menu");
+document.addEventListener('click', (e) => {
+  if (!navMenu.contains(e.target) && !navToggle.contains(e.target) && navMenu.classList.contains('active')) {
+    navMenu.classList.remove('active');
+    navToggle.classList.remove('active');
   }
 });
 
-function scrollHeader() {
-  if (window.scrollY >= 50) {
-    header.classList.add("scroll-header");
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 50) {
+    navbar.classList.add('scrolled');
   } else {
-    header.classList.remove("scroll-header");
+    navbar.classList.remove('scrolled');
   }
-}
 
-window.addEventListener("scroll", scrollHeader);
+  if (window.scrollY > 400) {
+    scrollTopBtn.classList.add('visible');
+  } else {
+    scrollTopBtn.classList.remove('visible');
+  }
 
-function scrollActive() {
-  const scrollY = window.pageYOffset;
+  updateActiveNav();
+});
 
-  sections.forEach((section) => {
-    const sectionHeight = section.offsetHeight;
-    const sectionTop = section.offsetTop - 100;
-    const sectionId = section.getAttribute("id");
-    const navLink = document.querySelector(`.nav-menu a[href*="${sectionId}"]`);
+function updateActiveNav() {
+  const sections = document.querySelectorAll('section[id]');
+  const scrollPos = window.scrollY + 100;
 
-    if (navLink) {
-      if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-        navLink.classList.add("active-link");
-      } else {
-        navLink.classList.remove("active-link");
+  sections.forEach(section => {
+    const top = section.offsetTop;
+    const height = section.offsetHeight;
+    const id = section.getAttribute('id');
+    const link = document.querySelector(`.nav-link[href="#${id}"]`);
+
+    if (link) {
+      if (scrollPos >= top && scrollPos < top + height) {
+        navLinks.forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
       }
     }
   });
 }
 
-window.addEventListener("scroll", scrollActive);
+scrollTopBtn.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
 
-function showScrollUp() {
-  if (window.scrollY >= 400) {
-    scrollUp.classList.add("show-scroll");
-  } else {
-    scrollUp.classList.remove("show-scroll");
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme) {
+  document.documentElement.setAttribute('data-theme', savedTheme);
+} else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+  document.documentElement.setAttribute('data-theme', 'dark');
+}
+
+themeToggle.addEventListener('click', () => {
+  const currentTheme = document.documentElement.getAttribute('data-theme');
+  const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', newTheme);
+  localStorage.setItem('theme', newTheme);
+});
+
+const observerOptions = {
+  threshold: 0.2,
+  rootMargin: '0px'
+};
+
+const skillObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const bar = entry.target;
+      const width = bar.getAttribute('data-width');
+      bar.style.width = `${width}%`;
+      skillObserver.unobserve(bar);
+    }
+  });
+}, observerOptions);
+
+skillBars.forEach(bar => skillObserver.observe(bar));
+
+function animateNumber(element, target, duration = 2000) {
+  let start = 0;
+  const increment = target / (duration / 16);
+  
+  function update() {
+    start += increment;
+    if (start < target) {
+      element.textContent = Math.floor(start);
+      requestAnimationFrame(update);
+    } else {
+      element.textContent = target;
+    }
   }
+  
+  update();
 }
 
-window.addEventListener("scroll", showScrollUp);
-
-scrollUp.addEventListener("click", (e) => {
-  e.preventDefault();
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth"
+const statObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const target = parseInt(entry.target.getAttribute('data-target'));
+      animateNumber(entry.target, target);
+      statObserver.unobserve(entry.target);
+    }
   });
+}, observerOptions);
+
+statNumbers.forEach(num => statObserver.observe(num));
+
+const revealElements = document.querySelectorAll('.skill-category, .service-card, .contact-method, .stat-card, .highlight-item');
+
+revealElements.forEach((el, index) => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(30px)';
+  el.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
 });
 
-const darkTheme = "dark-theme";
-const iconTheme = "fa-sun";
-const selectedTheme = localStorage.getItem("selected-theme");
-const selectedIcon = localStorage.getItem("selected-icon");
-
-const getCurrentTheme = () =>
-  document.body.classList.contains(darkTheme) ? "dark" : "light";
-
-const getCurrentIcon = () =>
-  themeButton.classList.contains(iconTheme) ? "fa-moon" : "fa-sun";
-
-if (selectedTheme) {
-  document.body.classList[selectedTheme === "dark" ? "add" : "remove"](darkTheme);
-  themeButton.classList[selectedIcon === "fa-moon" ? "add" : "remove"](iconTheme);
-}
-
-themeButton.addEventListener("click", () => {
-  document.body.classList.toggle(darkTheme);
-  themeButton.classList.toggle(iconTheme);
-  localStorage.setItem("selected-theme", getCurrentTheme());
-  localStorage.setItem("selected-icon", getCurrentIcon());
-});
-
-function animateSkillsOnScroll() {
-  const observerOptions = {
-    threshold: 0.3,
-    rootMargin: "0px"
-  };
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        const skillItem = entry.target;
-        const level = skillItem.getAttribute("data-level");
-        skillItem.style.setProperty("--skill-level", `${level}%`);
-        skillItem.classList.add("animate");
-        observer.unobserve(skillItem);
-      }
-    });
-  }, observerOptions);
-
-  skillItems.forEach((item) => {
-    observer.observe(item);
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = '1';
+      entry.target.style.transform = 'translateY(0)';
+      revealObserver.unobserve(entry.target);
+    }
   });
-}
+}, { threshold: 0.1 });
 
-function revealOnScroll() {
-  const reveals = document.querySelectorAll(
-    ".about-container, .skills-group, .services-card, .contact-card, .contact-form"
-  );
-
-  const observerOptions = {
-    threshold: 0.1,
-    rootMargin: "0px 0px -50px 0px"
-  };
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.style.opacity = "1";
-        entry.target.style.transform = "translateY(0)";
-        observer.unobserve(entry.target);
-      }
-    });
-  }, observerOptions);
-
-  reveals.forEach((el) => {
-    el.style.opacity = "0";
-    el.style.transform = "translateY(30px)";
-    el.style.transition = "opacity 0.6s ease, transform 0.6s ease";
-    observer.observe(el);
-  });
-}
-
-document.addEventListener("DOMContentLoaded", revealOnScroll);
+revealElements.forEach(el => revealObserver.observe(el));
 
 if (contactForm) {
-  contactForm.addEventListener("submit", (e) => {
+  contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
-
+    
     const formData = new FormData(contactForm);
-    const name = formData.get("name");
-    const email = formData.get("email");
-    const subject = formData.get("subject");
-    const message = formData.get("message");
+    const name = formData.get('name');
+    const email = formData.get('email');
+    const subject = formData.get('subject') || 'Contact from Website';
+    const message = formData.get('message');
 
-    const mailtoLink = `mailto:contactrenanmakoto@gmail.com?subject=${encodeURIComponent(
-      subject || "Contact from Website"
-    )}&body=${encodeURIComponent(
-      `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
-    )}`;
-
+    const mailtoLink = `mailto:contactrenanmakoto@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
+    
     window.location.href = mailtoLink;
-
     contactForm.reset();
   });
 }
 
-document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-  anchor.addEventListener("click", function (e) {
-    const href = this.getAttribute("href");
-    if (href !== "#") {
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    const href = this.getAttribute('href');
+    if (href !== '#') {
       e.preventDefault();
       const target = document.querySelector(href);
       if (target) {
-        const headerOffset = 80;
-        const elementPosition = target.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: "smooth"
-        });
+        const offset = 80;
+        const position = target.getBoundingClientRect().top + window.pageYOffset - offset;
+        window.scrollTo({ top: position, behavior: 'smooth' });
       }
     }
   });
-});
-
-const serviceCards = document.querySelectorAll(".services-card");
-
-serviceCards.forEach((card) => {
-  card.addEventListener("touchstart", function () {
-    this.querySelector(".services-card-inner").style.transform = "rotateY(180deg)";
-  });
-
-  card.addEventListener("touchend", function () {
-    setTimeout(() => {
-      this.querySelector(".services-card-inner").style.transform = "rotateY(0deg)";
-    }, 3000);
-  });
-});
-
-const inputs = document.querySelectorAll(".contact-input");
-
-inputs.forEach((input) => {
-  input.addEventListener("focus", function () {
-    this.parentElement.classList.add("focused");
-  });
-
-  input.addEventListener("blur", function () {
-    if (this.value === "") {
-      this.parentElement.classList.remove("focused");
-    }
-  });
-});
-
-let ticking = false;
-
-window.addEventListener("scroll", () => {
-  if (!ticking) {
-    window.requestAnimationFrame(() => {
-      scrollHeader();
-      scrollActive();
-      showScrollUp();
-      ticking = false;
-    });
-    ticking = true;
-  }
 });
