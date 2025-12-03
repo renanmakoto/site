@@ -10,11 +10,11 @@ const statNumbers = document.querySelectorAll('.stat-number');
 const contactForm = document.getElementById('contact-form');
 
 const phrases = [
-  'Software Development',
-  'Web Applications',
-  'Mobile Solutions',
-  'Cloud Infrastructure',
-  'Digital Innovation'
+  'scales with your business',
+  'drives real results',
+  'users actually love',
+  'launches on time',
+  'stands the test of time'
 ];
 
 let phraseIndex = 0;
@@ -54,12 +54,14 @@ document.addEventListener('DOMContentLoaded', () => {
 navToggle.addEventListener('click', () => {
   navMenu.classList.toggle('active');
   navToggle.classList.toggle('active');
+  navToggle.setAttribute('aria-expanded', navMenu.classList.contains('active'));
 });
 
 navLinks.forEach(link => {
   link.addEventListener('click', () => {
     navMenu.classList.remove('active');
     navToggle.classList.remove('active');
+    navToggle.setAttribute('aria-expanded', 'false');
   });
 });
 
@@ -67,6 +69,7 @@ document.addEventListener('click', (e) => {
   if (!navMenu.contains(e.target) && !navToggle.contains(e.target) && navMenu.classList.contains('active')) {
     navMenu.classList.remove('active');
     navToggle.classList.remove('active');
+    navToggle.setAttribute('aria-expanded', 'false');
   }
 });
 
@@ -170,12 +173,12 @@ const statObserver = new IntersectionObserver((entries) => {
 
 statNumbers.forEach(num => statObserver.observe(num));
 
-const revealElements = document.querySelectorAll('.skill-category, .service-card, .contact-method, .stat-card, .highlight-item');
+const revealElements = document.querySelectorAll('.skill-category, .service-card, .contact-method, .stat-card, .highlight-item, .process-step, .work-card');
 
 revealElements.forEach((el, index) => {
   el.style.opacity = '0';
   el.style.transform = 'translateY(30px)';
-  el.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
+  el.style.transition = `opacity 0.6s ease ${index * 0.05}s, transform 0.6s ease ${index * 0.05}s`;
 });
 
 const revealObserver = new IntersectionObserver((entries) => {
@@ -197,10 +200,10 @@ if (contactForm) {
     const formData = new FormData(contactForm);
     const name = formData.get('name');
     const email = formData.get('email');
-    const subject = formData.get('subject') || 'Contact from Website';
+    const subject = formData.get('subject') || 'Project Inquiry';
     const message = formData.get('message');
 
-    const mailtoLink = `mailto:contactrenanmakoto@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
+    const mailtoLink = `mailto:contact@dotextension.dev?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
     
     window.location.href = mailtoLink;
     contactForm.reset();
