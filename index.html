@@ -3,37 +3,64 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>dotExtension - Renan Makoto</title>
+    <meta name="description" content="dotExtension - Professional Software Development Services by Renan Makoto. Specializing in JavaScript, TypeScript, React Native, and Node.js development.">
+    <meta name="keywords" content="software development, web development, mobile development, JavaScript, TypeScript, React Native, Node.js">
+    <meta name="author" content="Renan Makoto">
+    <meta property="og:title" content="dotExtension - Software Development">
+    <meta property="og:description" content="Professional software development services extending to every filetype.">
+    <meta property="og:type" content="website">
+    <title>dotExtension - Renan Makoto | Software Developer</title>
     <link rel="stylesheet" href="libraries/swiper-bundle.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" type="image/x-icon" href="./assets/RM-2.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   </head>
   <body>
+    <div class="loader" id="loader">
+      <div class="loader-content">
+        <span class="loader-text"><span class="logo-dot">.</span>Extension</span>
+        <div class="loader-bar"></div>
+      </div>
+    </div>
+
     <header class="header" id="header">
       <nav class="nav container">
-        <a href="#" class="nav-logo">dotExtension</a>
+        <a href="#" class="nav-logo">
+          <span class="logo-dot">.</span>Extension
+        </a>
 
         <div class="nav-menu" id="nav-menu">
-          <ul class="nav-list grid">
+          <ul class="nav-list">
             <li class="nav-item">
-              <a href="#home" class="nav-link"
-                ><i class="fa-solid fa-house nav-icon"></i> Home</a>
+              <a href="#home" class="nav-link active-link">
+                <i class="fa-solid fa-house nav-icon"></i>
+                <span>Home</span>
+              </a>
             </li>
             <li class="nav-item">
-              <a href="#about" class="nav-link"
-                ><i class="fa-solid fa-user nav-icon"></i> About</a>
+              <a href="#about" class="nav-link">
+                <i class="fa-solid fa-user nav-icon"></i>
+                <span>About</span>
+              </a>
             </li>
             <li class="nav-item">
-              <a href="#skills" class="nav-link"
-                ><i class="fa-solid fa-file nav-icon"></i> Skills</a>
+              <a href="#skills" class="nav-link">
+                <i class="fa-solid fa-code nav-icon"></i>
+                <span>Skills</span>
+              </a>
             </li>
             <li class="nav-item">
-              <a href="#services" class="nav-link"
-                ><i class="fa-solid fa-briefcase nav-icon"></i> Services</a>
+              <a href="#services" class="nav-link">
+                <i class="fa-solid fa-briefcase nav-icon"></i>
+                <span>Services</span>
+              </a>
             </li>
             <li class="nav-item">
-              <a href="#contact" class="nav-link"
-                ><i class="fa-solid fa-message nav-icon"></i> Contact</a>
+              <a href="#contact" class="nav-link">
+                <i class="fa-solid fa-message nav-icon"></i>
+                <span>Contact</span>
+              </a>
             </li>
           </ul>
           <i class="fa-solid fa-xmark nav-close" id="nav-close"></i>
@@ -41,7 +68,6 @@
 
         <div class="nav-btns">
           <i class="fa-regular fa-moon change-theme" id="theme-button"></i>
-
           <div class="nav-toggle" id="nav-toggle">
             <i class="fa-solid fa-bars"></i>
           </div>
@@ -53,264 +79,424 @@
       <section class="home section" id="home">
         <div class="home-container container grid">
           <div class="home-content">
-            <div class="home-data">
-              <h1 class="home-title">Welcome to dotExtension</h1>
-              <h3 class="home-subtitle">Software Development</h3>
-              <p class="home-description">
-                Extending to every filetype
-              </p>
-              <a href="#contact" class="button button-flex">
-                Contact Us <i class="fa-regular fa-envelope button-icon"></i>
+            <div class="home-social">
+              <a href="https://www.linkedin.com/in/renanmakoto/" target="_blank" class="home-social-icon" aria-label="LinkedIn">
+                <i class="fa-brands fa-linkedin-in"></i>
+              </a>
+              <a href="https://github.com/renanmakoto" target="_blank" class="home-social-icon" aria-label="GitHub">
+                <i class="fa-brands fa-github"></i>
               </a>
             </div>
+
+            <div class="home-data">
+              <span class="home-greeting">Hello, I'm</span>
+              <h1 class="home-title">Renan Makoto</h1>
+              <div class="home-subtitle-wrapper">
+                <h2 class="home-subtitle">
+                  <span class="typed-text"></span>
+                  <span class="cursor">|</span>
+                </h2>
+              </div>
+              <p class="home-description">
+                Building digital solutions that extend to every possibility.
+                Crafting clean, efficient, and scalable code.
+              </p>
+              <div class="home-buttons">
+                <a href="#contact" class="button button-flex">
+                  Get In Touch
+                  <i class="fa-regular fa-paper-plane button-icon"></i>
+                </a>
+                <a href="#about" class="button button-outline button-flex">
+                  Learn More
+                  <i class="fa-solid fa-arrow-down button-icon"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="home-scroll">
+            <a href="#about" class="home-scroll-button button-flex">
+              <i class="fa-solid fa-computer-mouse home-scroll-mouse"></i>
+              <span class="home-scroll-name">Scroll down</span>
+              <i class="fa-solid fa-arrow-down home-scroll-arrow"></i>
+            </a>
           </div>
         </div>
       </section>
 
       <section class="about section" id="about">
-        <h2 class="section-title">About Us</h2>
-        <span class="section-subtitle"></span>
+        <h2 class="section-title">About Me</h2>
+        <span class="section-subtitle">My Introduction</span>
 
-        <div class="about-container container">
+        <div class="about-container container grid">
           <div class="about-data">
             <p class="about-description">
               As a dedicated developer with profound expertise in JavaScript, I excel in 
               delivering meticulously crafted solutions that merge creativity with technical precision. 
               My approach is anchored in methodical analysis and a deep attention to detail, 
               ensuring that every project I undertake is executed with the highest level of accuracy and effectiveness.
+            </p>
+            <p class="about-description">
               With a robust background in Linux systems, I leverage this platform to create secure, efficient, 
               and scalable software environments. My extensive experience spans across designing intuitive front-end interfaces, 
-              developing resilient back-end systems, and optimizing performance across the stack. 
-              I am committed to continuous learning, constantly evolving my skill set to stay at the forefront of technology.
-              I thrive in dynamic environments where I can apply my expertise to innovative projects, consistently pushing the 
-              boundaries of what's possible through the power of JavaScript and open-source tools.
+              developing resilient back-end systems, and optimizing performance across the stack.
             </p>
 
-            <div class="about-buttons">
-<!--               <a
-                download=""
-                href="/assets/renanmakotoresume.pdf"
-                class="button button-flex"
-              >
-                Download Resume
-                <i class="fa-solid fa-file-arrow-down button-icon"></i>
-              </a> -->
+            <div class="about-info">
+              <div class="about-info-item">
+                <span class="about-info-title">3+</span>
+                <span class="about-info-name">Years<br>Experience</span>
+              </div>
+              <div class="about-info-item">
+                <span class="about-info-title">20+</span>
+                <span class="about-info-name">Completed<br>Projects</span>
+              </div>
+              <div class="about-info-item">
+                <span class="about-info-title">10+</span>
+                <span class="about-info-name">Happy<br>Clients</span>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-<!--       <section class="skills section" id="skills">
+      <section class="skills section" id="skills">
         <h2 class="section-title">Skills</h2>
-        <span class="section-subtitle">My Technical Skills</span>
-        <div class="skills-content container">
-          <div class="skills-name">JavaScript</div>
-          <div class="skills-name">TypeScript</div>
-          <div class="skills-name">Node JS</div>
-          <div class="skills-name">React</div>
-          <div class="skills-name">React Native</div>
-          <div class="skills-name">Express JS</div>
-          <div class="skills-name">MongoDB</div>
-          <div class="skills-name">CSS</div>
-          <div class="skills-name">HTML</div>
+        <span class="section-subtitle">My Technical Expertise</span>
+
+        <div class="skills-container container grid">
+          <div class="skills-group">
+            <h3 class="skills-group-title">
+              <i class="fa-solid fa-code"></i>
+              Frontend
+            </h3>
+            <div class="skills-content">
+              <div class="skill-item" data-level="90">
+                <div class="skill-header">
+                  <span class="skill-name">JavaScript</span>
+                  <span class="skill-percentage">90%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-progress"></div>
+                </div>
+              </div>
+              <div class="skill-item" data-level="85">
+                <div class="skill-header">
+                  <span class="skill-name">TypeScript</span>
+                  <span class="skill-percentage">85%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-progress"></div>
+                </div>
+              </div>
+              <div class="skill-item" data-level="85">
+                <div class="skill-header">
+                  <span class="skill-name">React</span>
+                  <span class="skill-percentage">85%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-progress"></div>
+                </div>
+              </div>
+              <div class="skill-item" data-level="80">
+                <div class="skill-header">
+                  <span class="skill-name">HTML/CSS</span>
+                  <span class="skill-percentage">80%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-progress"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="skills-group">
+            <h3 class="skills-group-title">
+              <i class="fa-solid fa-server"></i>
+              Backend
+            </h3>
+            <div class="skills-content">
+              <div class="skill-item" data-level="88">
+                <div class="skill-header">
+                  <span class="skill-name">Node.js</span>
+                  <span class="skill-percentage">88%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-progress"></div>
+                </div>
+              </div>
+              <div class="skill-item" data-level="80">
+                <div class="skill-header">
+                  <span class="skill-name">Express.js</span>
+                  <span class="skill-percentage">80%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-progress"></div>
+                </div>
+              </div>
+              <div class="skill-item" data-level="75">
+                <div class="skill-header">
+                  <span class="skill-name">MongoDB</span>
+                  <span class="skill-percentage">75%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-progress"></div>
+                </div>
+              </div>
+              <div class="skill-item" data-level="70">
+                <div class="skill-header">
+                  <span class="skill-name">MySQL</span>
+                  <span class="skill-percentage">70%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-progress"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="skills-group">
+            <h3 class="skills-group-title">
+              <i class="fa-solid fa-mobile-screen"></i>
+              Mobile & Tools
+            </h3>
+            <div class="skills-content">
+              <div class="skill-item" data-level="85">
+                <div class="skill-header">
+                  <span class="skill-name">React Native</span>
+                  <span class="skill-percentage">85%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-progress"></div>
+                </div>
+              </div>
+              <div class="skill-item" data-level="80">
+                <div class="skill-header">
+                  <span class="skill-name">Expo</span>
+                  <span class="skill-percentage">80%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-progress"></div>
+                </div>
+              </div>
+              <div class="skill-item" data-level="85">
+                <div class="skill-header">
+                  <span class="skill-name">Git</span>
+                  <span class="skill-percentage">85%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-progress"></div>
+                </div>
+              </div>
+              <div class="skill-item" data-level="75">
+                <div class="skill-header">
+                  <span class="skill-name">Linux</span>
+                  <span class="skill-percentage">75%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-progress"></div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </section> -->
+
+        <div class="skills-tags container">
+          <span class="skill-tag">ES6+</span>
+          <span class="skill-tag">REST APIs</span>
+          <span class="skill-tag">Firebase</span>
+          <span class="skill-tag">Redux</span>
+          <span class="skill-tag">Sass</span>
+          <span class="skill-tag">Webpack</span>
+          <span class="skill-tag">Docker</span>
+          <span class="skill-tag">Agile</span>
+        </div>
+      </section>
 
       <section class="services section" id="services">
         <h2 class="section-title">Services</h2>
-        <span class="section-subtitle">What I offer</span>
+        <span class="section-subtitle">What I Offer</span>
 
         <div class="services-container container grid">
-          <div class="services-content">
-            <div class="title-div">
-              <h3 class="services-title">Software<br>Development</h3>
-            </div>
-            <span
-              class="button button-flex button-small button-link services-button"
-              >View more
-              <i class="fa-solid fa-arrow-right button-icon"></i>
-            </span>
-
-            <div class="services-box">
-              <div class="services-box-content">
-                <h4 class="services-box-title">Programming Technologies</h4>
-                <i class="fa-solid fa-xmark services-box-close"></i>
-
-                <ul class="services-box-services grid">
-                  <li class="services-box-list">
-                    <i
-                      class="fa-regular fa-circle-check services-list-icon"
-                    ></i>
-                    <p>EcmaScript 6</p>
-                  </li>
-
-                  <li class="services-box-list">
-                    <i
-                      class="fa-regular fa-circle-check services-list-icon"
-                    ></i>
-                    <p>TypeScript</p>
-                  </li>
-
-                  <li class="services-box-list">
-                    <i
-                      class="fa-regular fa-circle-check services-list-icon"
-                    ></i>
-                    <p>Node.js</p>
-                  </li>
+          <article class="services-card">
+            <div class="services-card-inner">
+              <div class="services-card-front">
+                <div class="services-icon-wrapper">
+                  <i class="fa-solid fa-laptop-code services-icon"></i>
+                </div>
+                <h3 class="services-title">Web Development</h3>
+                <p class="services-description">Modern, responsive websites and web applications</p>
+              </div>
+              <div class="services-card-back">
+                <h4 class="services-back-title">Technologies</h4>
+                <ul class="services-list">
+                  <li><i class="fa-solid fa-check"></i> React & Next.js</li>
+                  <li><i class="fa-solid fa-check"></i> Node.js & Express</li>
+                  <li><i class="fa-solid fa-check"></i> TypeScript</li>
+                  <li><i class="fa-solid fa-check"></i> RESTful APIs</li>
                 </ul>
+                <a href="#contact" class="button button-small">Get Started</a>
               </div>
             </div>
-          </div>
-          <div class="services-content">
-            <div class="title-div">
-              <h3 class="services-title">Mobile<br>Interfaces</h3>
-            </div>
-            <span
-              class="button button-flex button-small button-link services-button"
-              >View more
-              <i class="fa-solid fa-arrow-right button-icon"></i>
-            </span>
+          </article>
 
-            <div class="services-box">
-              <div class="services-box-content">
-                <h4 class="services-box-title">Mobile Technologies<br></h4>
-                <i class="fa-solid fa-xmark services-box-close"></i>
-
-                <ul class="services-box-services grid">
-                  <li class="services-box-list">
-                    <i
-                      class="fa-regular fa-circle-check services-list-icon"
-                    ></i>
-                    <p>React Native</p>
-                  </li>
-                  <li class="services-box-list">
-                    <i
-                      class="fa-regular fa-circle-check services-list-icon"
-                    ></i>
-                    <p>Expo</p>
-                  </li>
-                  <li class="services-box-list">
-                    <i
-                      class="fa-regular fa-circle-check services-list-icon"
-                    ></i>
-                    <p>TypeScript</p>
-                  </li>
+          <article class="services-card">
+            <div class="services-card-inner">
+              <div class="services-card-front">
+                <div class="services-icon-wrapper">
+                  <i class="fa-solid fa-mobile-screen-button services-icon"></i>
+                </div>
+                <h3 class="services-title">Mobile Development</h3>
+                <p class="services-description">Cross-platform mobile applications</p>
+              </div>
+              <div class="services-card-back">
+                <h4 class="services-back-title">Technologies</h4>
+                <ul class="services-list">
+                  <li><i class="fa-solid fa-check"></i> React Native</li>
+                  <li><i class="fa-solid fa-check"></i> Expo</li>
+                  <li><i class="fa-solid fa-check"></i> iOS & Android</li>
+                  <li><i class="fa-solid fa-check"></i> Push Notifications</li>
                 </ul>
+                <a href="#contact" class="button button-small">Get Started</a>
               </div>
             </div>
-          </div>
-          <div class="services-content">
-            <div class="title-div">
-              <h3 class="services-title">Database<br></h3>
-            </div>
-            <span
-              class="button button-flex button-small button-link services-button"
-              >View more
-              <i class="fa-solid fa-arrow-right button-icon"></i>
-            </span>
+          </article>
 
-            <div class="services-box">
-              <div class="services-box-content">
-                <h4 class="services-box-title">Database Management<br></h4>
-                <i class="fa-solid fa-xmark services-box-close"></i>
-
-                <ul class="services-box-services grid">
-                  <li class="services-box-list">
-                    <i
-                      class="fa-regular fa-circle-check services-list-icon"
-                    ></i>
-                    <p>MongoDB</p>
-                  </li>
-                  <li class="services-box-list">
-                    <i
-                      class="fa-regular fa-circle-check services-list-icon"
-                    ></i>
-                    <p>Firebase</p>
-                  </li>
-                  <li class="services-box-list">
-                    <i
-                      class="fa-regular fa-circle-check services-list-icon"
-                    ></i>
-                    <p>MySQL</p>
-                  </li>
+          <article class="services-card">
+            <div class="services-card-inner">
+              <div class="services-card-front">
+                <div class="services-icon-wrapper">
+                  <i class="fa-solid fa-database services-icon"></i>
+                </div>
+                <h3 class="services-title">Backend & Database</h3>
+                <p class="services-description">Scalable server-side solutions</p>
+              </div>
+              <div class="services-card-back">
+                <h4 class="services-back-title">Technologies</h4>
+                <ul class="services-list">
+                  <li><i class="fa-solid fa-check"></i> MongoDB & MySQL</li>
+                  <li><i class="fa-solid fa-check"></i> Firebase</li>
+                  <li><i class="fa-solid fa-check"></i> Authentication</li>
+                  <li><i class="fa-solid fa-check"></i> Cloud Services</li>
                 </ul>
+                <a href="#contact" class="button button-small">Get Started</a>
               </div>
             </div>
-          </div>
+          </article>
         </div>
       </section>
 
       <section class="contact section" id="contact">
-        <h2 class="section-title">Contact me</h2>
-        <span class="section-subtitle">Get in touch</span>
+        <h2 class="section-title">Contact Me</h2>
+        <span class="section-subtitle">Let's Work Together</span>
 
         <div class="contact-container container grid">
-          <div>
-            <div class="contact-info">
+          <div class="contact-info-wrapper">
+            <div class="contact-card">
               <i class="fa-regular fa-envelope contact-icon"></i>
-              <div>
-                <h3 class="contact-title">Email</h3>
-                <a
-                  href="mailto:contactrenanmakoto@gmail.com"
-                  target="_blank"
-                  class="contact-subtitle"
-                  >contactrenanmakoto@gmail.com</a>
-              </div>
+              <h3 class="contact-title">Email</h3>
+              <p class="contact-subtitle">contactrenanmakoto@gmail.com</p>
+              <a href="mailto:contactrenanmakoto@gmail.com" class="contact-link">
+                Write me
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
             </div>
-            <div class="contact-info">
+
+            <div class="contact-card">
               <i class="fa-brands fa-linkedin-in contact-icon"></i>
-              <div>
-                <h3 class="contact-title">Linkedin</h3>
-                <a
-                  class="contact-subtitle"
-                  href="https://www.linkedin.com/in/renanmakoto/"
-                  target="_blank"
-                  >@renanmakoto</a>
-              </div>
+              <h3 class="contact-title">LinkedIn</h3>
+              <p class="contact-subtitle">@renanmakoto</p>
+              <a href="https://www.linkedin.com/in/renanmakoto/" target="_blank" class="contact-link">
+                Connect
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+
+            <div class="contact-card">
+              <i class="fa-brands fa-github contact-icon"></i>
+              <h3 class="contact-title">GitHub</h3>
+              <p class="contact-subtitle">@renanmakoto</p>
+              <a href="https://github.com/renanmakoto" target="_blank" class="contact-link">
+                View Profile
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
             </div>
           </div>
+
+          <form class="contact-form" id="contact-form">
+            <div class="contact-form-group">
+              <label for="name" class="contact-label">Name</label>
+              <input type="text" id="name" name="name" class="contact-input" placeholder="Your name" required>
+            </div>
+            <div class="contact-form-group">
+              <label for="email" class="contact-label">Email</label>
+              <input type="email" id="email" name="email" class="contact-input" placeholder="Your email" required>
+            </div>
+            <div class="contact-form-group">
+              <label for="subject" class="contact-label">Subject</label>
+              <input type="text" id="subject" name="subject" class="contact-input" placeholder="Subject">
+            </div>
+            <div class="contact-form-group">
+              <label for="message" class="contact-label">Message</label>
+              <textarea id="message" name="message" class="contact-input contact-textarea" placeholder="Your message" required></textarea>
+            </div>
+            <button type="submit" class="button button-flex contact-button">
+              Send Message
+              <i class="fa-regular fa-paper-plane button-icon"></i>
+            </button>
+          </form>
         </div>
       </section>
-
-      <footer class="footer">
-        <div class="footer-bg">
-          <div class="footer-container container grid">
-            <div>
-              <h1 class="footer-title">Renan Makoto</h1>
-              <span class="footer-subtitle">Software Developer</span>
-            </div>
-
-            <div class="footer-socials">
-              <a
-                href="https://www.linkedin.com/in/renanmakoto/"
-                target="_blank"
-                class="footer-social"
-                ><i class="fa-brands fa-linkedin-in"></i
-              ></a>
-              <a
-                href="https://github.com/renanmakoto"
-                target="_blank"
-                class="footer-social"
-                ><i class="fa-brands fa-github"></i
-              ></a>
-            </div>
-          </div>
-          <p class="footer-copy">
-            By Renan Makoto - dotExtension<br /><br />Extending to every file
-            type.
-          </p>
-        </div>
-      </footer>
     </main>
 
-    <a href="#home" class="scrollup" id="scroll-up">
+    <footer class="footer">
+      <div class="footer-container container grid">
+        <div class="footer-content">
+          <a href="#" class="footer-logo">
+            <span class="logo-dot">.</span>Extension
+          </a>
+          <p class="footer-description">
+            Extending to every filetype.<br>
+            Building digital solutions with passion.
+          </p>
+        </div>
+
+        <div class="footer-content">
+          <h3 class="footer-title">Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="#about" class="footer-link">About</a></li>
+            <li><a href="#skills" class="footer-link">Skills</a></li>
+            <li><a href="#services" class="footer-link">Services</a></li>
+            <li><a href="#contact" class="footer-link">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-content">
+          <h3 class="footer-title">Follow Me</h3>
+          <div class="footer-socials">
+            <a href="https://www.linkedin.com/in/renanmakoto/" target="_blank" class="footer-social" aria-label="LinkedIn">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+            <a href="https://github.com/renanmakoto" target="_blank" class="footer-social" aria-label="GitHub">
+              <i class="fa-brands fa-github"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copy">
+          &copy; 2024 Renan Makoto. All rights reserved.
+        </p>
+      </div>
+    </footer>
+
+    <a href="#home" class="scrollup" id="scroll-up" aria-label="Scroll to top">
       <i class="fa-solid fa-arrow-up scroll-up-icon"></i>
     </a>
-    <script src="Libraries/swiper-bundle.min.js"></script>
-    <script
-      src="https://kit.fontawesome.com/9b634c15bd.js"
-      crossorigin="anonymous"
-    ></script>
+
+    <script src="libraries/swiper-bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/9b634c15bd.js" crossorigin="anonymous"></script>
     <script src="script.js"></script>
   </body>
 </html>
