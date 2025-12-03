@@ -514,6 +514,16 @@ input, textarea {
   align-items: start;
 }
 
+.about-content-centered {
+  display: block;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.about-text-centered {
+  text-align: center;
+}
+
 .about-text p {
   color: var(--color-text-secondary);
   margin-bottom: 1.5rem;
@@ -531,6 +541,25 @@ input, textarea {
   flex-direction: column;
   gap: 1rem;
   margin-top: 2rem;
+}
+
+.about-highlights-centered {
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.about-highlights-centered .highlight-item {
+  flex: 1 1 280px;
+  max-width: 320px;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+}
+
+.about-highlights-centered .highlight-item:hover {
+  transform: translateY(-8px);
 }
 
 .highlight-item {
