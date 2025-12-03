@@ -10,11 +10,11 @@ const statNumbers = document.querySelectorAll('.stat-number');
 const contactForm = document.getElementById('contact-form');
 
 const phrases = [
-  'Software Developer',
-  'Full Stack Engineer',
-  'JavaScript Expert',
-  'React Native Developer',
-  'Problem Solver'
+  'Software Development',
+  'Web Applications',
+  'Mobile Solutions',
+  'Cloud Infrastructure',
+  'Digital Innovation'
 ];
 
 let phraseIndex = 0;
