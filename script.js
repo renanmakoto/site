@@ -58,20 +58,17 @@ navToggle.addEventListener('click', () => {
 });
 
 navLinks.forEach(link => {
-  link.addEventListener('click', (e) => {
+  link.addEventListener('click', function(e) {
     e.preventDefault();
-    const href = link.getAttribute('href');
+    const href = this.getAttribute('href');
     const target = document.querySelector(href);
     
     if (target) {
-      const offset = 80;
-      const position = target.getBoundingClientRect().top + window.pageYOffset - offset;
-      
-      window.scrollTo({
-        top: position,
-        behavior: 'smooth'
-      });
+      target.scrollIntoView({ behavior: 'smooth' });
     }
+    
+    navLinks.forEach(n => n.classList.remove('active'));
+    this.classList.add('active');
     
     navMenu.classList.remove('active');
     navToggle.classList.remove('active');
@@ -238,3 +235,19 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     }
   });
 });
+
+// ScrollReveal Animations
+const sr = ScrollReveal({
+  origin: 'top',
+  distance: '80px',
+  duration: 2000,
+  reset: true
+});
+
+sr.reveal('.hero-content', {});
+sr.reveal('.section-header', { delay: 200 });
+sr.reveal('.about-text-centered', { delay: 400 });
+sr.reveal('.highlight-item-centered', { interval: 200 });
+sr.reveal('.service-card', { interval: 200 });
+sr.reveal('.process-step', { interval: 200 });
+sr.reveal('.contact-method', { interval: 200 });
