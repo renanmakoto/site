@@ -58,7 +58,21 @@ navToggle.addEventListener('click', () => {
 });
 
 navLinks.forEach(link => {
-  link.addEventListener('click', () => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault();
+    const href = link.getAttribute('href');
+    const target = document.querySelector(href);
+    
+    if (target) {
+      const offset = 80;
+      const position = target.getBoundingClientRect().top + window.pageYOffset - offset;
+      
+      window.scrollTo({
+        top: position,
+        behavior: 'smooth'
+      });
+    }
+    
     navMenu.classList.remove('active');
     navToggle.classList.remove('active');
     navToggle.setAttribute('aria-expanded', 'false');
