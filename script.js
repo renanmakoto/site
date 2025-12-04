@@ -236,18 +236,4 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-// ScrollReveal Animations
-const sr = ScrollReveal({
-  origin: 'top',
-  distance: '80px',
-  duration: 2000,
-  reset: true
-});
 
-sr.reveal('.hero-content', {});
-sr.reveal('.section-header', { delay: 200 });
-sr.reveal('.about-text-centered', { delay: 400 });
-sr.reveal('.highlight-item-centered', { interval: 200 });
-sr.reveal('.service-card', { interval: 200 });
-sr.reveal('.process-step', { interval: 200 });
-sr.reveal('.contact-method', { interval: 200 });
